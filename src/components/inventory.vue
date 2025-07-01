@@ -128,7 +128,7 @@ function processData() {
       <div class="d-flex justify-content-center">
         <h2 class="text-lg font-semibold mb-2 mt-5">整理後資料</h2>
       </div>
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center mb-5">
         <table class="table-auto w-full border-collapse text-sm">
           <thead>
             <tr class="bg-gray-200">
