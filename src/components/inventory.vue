@@ -127,7 +127,7 @@ function clearData() {
       <textarea v-model="inputText" rows="10" class="w-50 border p-2 rounded mb-4" placeholder="貼上原始資料（含料號、品名敘述、合計數量、倉別）"></textarea>
     </div>
     <div class="d-flex justify-content-center">
-      <button @click="processData" class="bg-blue-600  px-4 py-2 rounded">整理資料</button>
+      <button @click="processData" class="bg-blue-600  px-4 py-2 rounded me-2">整理資料</button>
       <button @click="clearData" class="bg-gray-400  px-4 py-2 rounded">清除</button>
     </div>
     <div v-if="Object.keys(formattedOutput).length" class="mt-6 overflow-auto ">
