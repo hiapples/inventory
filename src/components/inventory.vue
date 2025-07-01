@@ -29,7 +29,7 @@ const categories = {
     { fullName: 'C600 主濾網 Breathe Odors (1盒), 台灣版', shortName: 'C600Odors' },
     { fullName: 'C360 主濾網 Breathe Odors (1盒), 台灣版', shortName: 'C360Odors' },
     { fullName: 'C360 前置濾網 Breathe Carbon (1盒), 台灣版', shortName: 'C360Carbon' },
-    { fullName: 'C260 主濾網 Breathe Odors (1盒), 台灣版', shortName: 'C260Odors味' },
+    { fullName: 'C260 主濾網 Breathe Odors (1盒), 台灣版', shortName: 'C260Odors' },
     { fullName: 'C260 前置濾網 Breathe Bio (1盒), 台灣版', shortName: 'C260Bio' },
     { fullName: 'C200 主濾網 Breathe Combo (1盒), 台灣版', shortName: 'C200Combo' },
     { fullName: 'C200 主濾網 Breathe Odors (1盒), 台灣版', shortName: 'C200Odors' },
