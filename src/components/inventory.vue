@@ -128,7 +128,7 @@ function clearData() {
     </div>
     <div class="d-flex justify-content-center">
       <button @click="processData" class="bg-blue-600  px-4 py-2 rounded">整理資料</button>
-      <button @click="clearData" class="bg-gray-400 text-white px-4 py-2 rounded">清除</button>
+      <button @click="clearData" class="bg-gray-400  px-4 py-2 rounded">清除</button>
     </div>
     <div v-if="Object.keys(formattedOutput).length" class="mt-6 overflow-auto ">
       <div class="d-flex justify-content-center">
