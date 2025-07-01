@@ -115,35 +115,43 @@ function processData() {
 
 <template>
   <div class="p-1">
-    <h1 class="text-xl font-bold mb-4">盤點資料整理工具</h1>
-    <textarea v-model="inputText" rows="10" class="w-full border p-2 rounded mb-4" placeholder="貼上原始資料（含料號、品名敘述、合計數量、倉別）"></textarea>
-    <button @click="processData" class="bg-blue-600 text-white px-4 py-2 rounded">整理資料</button>
-
-    <div v-if="Object.keys(formattedOutput).length" class="mt-6 overflow-auto">
-      <h2 class="text-lg font-semibold mb-2">整理後資料</h2>
-      <table class="table-auto w-full border-collapse text-sm">
-        <thead>
-          <tr class="bg-gray-200">
-            <!-- 分類欄已移除 -->
-            <th class="border px-4 py-2 text-left align-middle" style="font-size: 8px;">品名敘述</th>
-            <th class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">新品</th>
-            <th class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">福利品</th>
-            <th class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">良品</th>
-            <th class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">不良品</th>
-          </tr>
-        </thead>
-        <tbody>
-          <template v-for="(rows, category) in formattedOutput" :key="category">
-            <tr v-for="row in rows" :key="row.name">
-              <td class="border px-4 py-2 text-left align-middle" style="font-size: 8px;">{{ row.name }}</td>
-              <td class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">{{ row.新品 || '' }}</td>
-              <td class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">{{ row.福利品 || '' }}</td>
-              <td class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">{{ row.良品 || '' }}</td>
-              <td class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">{{ row.不良品 || '' }}</td>
+    <div class="d-flex justify-content-center">
+      <h1 class="text-xl font-bold mb-4">盤點資料整理工具</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+      <textarea v-model="inputText" rows="10" class="w-50 border p-2 rounded mb-4" placeholder="貼上原始資料（含料號、品名敘述、合計數量、倉別）"></textarea>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button @click="processData" class="bg-blue-600  px-4 py-2 rounded">整理資料</button>
+    </div>
+    <div v-if="Object.keys(formattedOutput).length" class="mt-6 overflow-auto ">
+      <div class="d-flex justify-content-center">
+        <h2 class="text-lg font-semibold mb-2 mt-5">整理後資料</h2>
+      </div>
+      <div class="d-flex justify-content-center">
+        <table class="table-auto w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="border px-4 py-2 text-left align-middle" style="font-size: 8px;">品名敘述</th>
+              <th class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">新品</th>
+              <th class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">福利品</th>
+              <th class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">良品</th>
+              <th class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">不良品</th>
             </tr>
-          </template>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <template v-for="(rows, category) in formattedOutput" :key="category">
+              <tr v-for="row in rows" :key="row.name">
+                <td class="border px-4 py-2 text-left align-middle" style="font-size: 8px;">{{ row.name }}</td>
+                <td class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">{{ row.新品 || '' }}</td>
+                <td class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">{{ row.福利品 || '' }}</td>
+                <td class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">{{ row.良品 || '' }}</td>
+                <td class="border px-4 py-2 text-right align-middle" style="font-size: 8px;">{{ row.不良品 || '' }}</td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
