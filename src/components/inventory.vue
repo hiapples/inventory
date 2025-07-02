@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const inputText = ref('')
 const formattedOutput = ref({})
@@ -116,6 +116,24 @@ function clearData() {
   inputText.value = ''
   formattedOutput.value = {}
 }
+
+const currentYear = new Date().getFullYear()
+const years = Array.from({ length: 101 }, (_, i) => currentYear - i)
+const months = Array.from({ length: 12 }, (_, i) => i + 1)
+
+const selectedYear = ref('')
+const selectedMonth = ref('')
+const selectedDay = ref('')
+
+const days = computed(() => {
+  const year = Number(selectedYear.value)
+  const month = Number(selectedMonth.value)
+
+  if (!year || !month) return []
+
+  const lastDay = new Date(year, month, 0).getDate()
+  return Array.from({ length: lastDay }, (_, i) => i + 1)
+})
 </script>
 
 <template>
@@ -123,6 +141,29 @@ function clearData() {
     <div class="d-flex justify-content-center">
       <h1 class="text-xl font-bold mb-4">盤點資料整理工具</h1>
     </div>
+    <div class=" gap-2 d-flex justify-content-center mb-3">
+      <!-- 年 -->
+      <select v-model="selectedYear">
+        <option disabled value="">選擇年</option>
+        <option v-for="year in years" :key="year" :value="year">{{ year }} 年</option>
+      </select>
+
+      <!-- 月 -->
+      <select v-model="selectedMonth">
+        <option disabled value="">選擇月</option>
+        <option v-for="month in months" :key="month" :value="month">{{ month }} 月</option>
+      </select>
+
+      <!-- 日 -->
+      <select v-model="selectedDay">
+        <option disabled value="">選擇日</option>
+        <option v-for="day in days" :key="day" :value="day">{{ day }} 日</option>
+      </select>
+      <button class="bg-blue-600  px-4 py-2 rounded">查詢</button>
+    </div>
+
+
+
     <div class="d-flex justify-content-center">
       <textarea v-model="inputText" rows="10" class="w-50 border p-2 rounded mb-4" placeholder="貼上原始資料（含料號、品名敘述、合計數量、倉別）"></textarea>
     </div>
