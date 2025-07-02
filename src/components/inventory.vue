@@ -159,10 +159,8 @@ const days = computed(() => {
         <option disabled value="">選擇日</option>
         <option v-for="day in days" :key="day" :value="day">{{ day }} 日</option>
       </select>
-      <button class="bg-blue-600  px-4 py-2 rounded">查詢</button>
+      <button class="bg-blue-600  px-4 py-2 select">查詢</button>
     </div>
-
-
 
     <div class="d-flex justify-content-center">
       <textarea v-model="inputText" rows="10" class="w-50 border p-2 rounded mb-4" placeholder="貼上原始資料（含料號、品名敘述、合計數量、倉別）"></textarea>
@@ -214,5 +212,7 @@ th, td {
 table th, table td {
   font-size: 8px;
 }
-
+.select{
+  border-radius: 15px;
+}
 </style>
