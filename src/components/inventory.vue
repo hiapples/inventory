@@ -213,6 +213,6 @@ table th, table td {
   font-size: 8px;
 }
 .select{
-  border-radius: 15px;
+  border-radius: 30px;
 }
 </style>
