@@ -163,7 +163,7 @@ const days = computed(() => {
     </div>
 
     <div class="d-flex justify-content-center">
-      <textarea v-model="inputText" rows="10" class="w-50 border p-2 rounded mb-4" placeholder="貼上原始資料（含料號、品名敘述、合計數量、倉別）"></textarea>
+      <textarea v-model="inputText" rows="10" class="w-75 border p-2 rounded mb-4" placeholder="貼上原始資料（含料號、品名敘述、合計數量、倉別）"></textarea>
     </div>
     <div class="d-flex justify-content-center">
       <button @click="processData" class="bg-blue-600  px-4 py-2 rounded me-2">整理資料</button>
